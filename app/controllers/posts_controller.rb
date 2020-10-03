@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :correct_user, only: [:new, :create, :destroy]
+  # before_action :correct_user, only: [:new, :create, :destroy]
 
   def index
     @folder = Folder.find(params[:folder_id])
@@ -23,7 +23,7 @@ class PostsController < ApplicationController
       render "new"
     end
   end
-  
+
   def destroy
     @folder = Folder.find(params[:folder_id])
     @post = @folder.posts.find(params[:id])
@@ -31,8 +31,8 @@ class PostsController < ApplicationController
     redirect_back fallback_location: root_path, notice: "トークテーマを削除しました"
   end
 
-  def edit  
-    
+  def edit
+
   end
 
   private
